@@ -154,10 +154,10 @@ app.get('/adminusers', (req, res) => {
 });
 
 app.post('/admin', (req, res) => {
-    const { name, type, price, description, source } = req.body;
+    const { name, price, description, source } = req.body;
 
-    const query = 'INSERT INTO products (name, type, price, description, source) VALUES (?, ?, ?, ?, ?)';
-    const values = [name, type, price, description, source];
+    const query = 'INSERT INTO products (name, price, description, source) VALUES (?, ?, ?, ?)';
+    const values = [name, price, description, source];
 
     connection.query(query, values, (err, result) => {
         if (err) {
